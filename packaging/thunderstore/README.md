@@ -29,28 +29,3 @@ Requires **BepInExPack Valheim 5.4.2350**. Install through Thunderstore, or put 
 This is a client-side, profile-local text mod. Each player sees their own configured responses; a dedicated server does not need it. It does not change creature names, taming, ownership, pet effects, cooldowns or follow/stay commands. Commandable pets still follow/stay normally and show the custom response after that interaction. Mods that replace or suppress vanilla petting may prevent the message from appearing.
 
 Settings live in `BepInEx/config/Therunner.Getondabar.cfg`; saved responses live in `BepInEx/config/Therunner.Getondabar.rules.json`. Saving replaces the JSON atomically and retains the previous file as `.bak`. A malformed or unsupported rules file is preserved, with custom responses disabled; repair or move that file and restart. Disabling **General / Enabled** restores normal messages while leaving the editor available.
-
-## Build and verify
-
-The repository-root `VERSION` is the sole authored version. The original scaffold commit is considered **0.1.0**; the first functional release is **0.1.1**.
-
-Requires the .NET SDK, .NET Framework 4.7.2 references (restored by NuGet), and an installed Valheim/BepInEx profile. Create an ignored `src/GetondabarMod/Environment.props` using this template, replacing the placeholders with your local paths:
-
-```xml
-<Project><PropertyGroup>
-  <ValheimInstall>YOUR_VALHEIM_INSTALL</ValheimInstall>
-  <BepInExCore>YOUR_PROFILE/BepInEx/core</BepInExCore>
-</PropertyGroup></Project>
-```
-
-```powershell
-dotnet build src/GetondabarMod/GetondabarMod.csproj -c Release
-dotnet run --project tests/Getondabar.Tests.csproj -c Release
-dotnet build tests/HarmonyVerify/HarmonyVerify.csproj -c Release
-# Run with your local game Managed directory and profile BepInEx/core directory:
-./tests/HarmonyVerify/bin/Release/net10.0/HarmonyVerify.exe YOUR_MANAGED_DIR YOUR_BEPINEX_CORE
-```
-
-Rule/persistence tests and Harmony verification run outside the game. The verifier uses a test-only CoreCLR-compatible HarmonyX; the shipped DLL uses the profile's Harmony and does not bundle or upgrade it. Verification checks the installed game's patch targets and emitted patches, and does not prove Mono runtime, visual layout or gameplay behavior. See [TESTING.md](TESTING.md) for the in-game acceptance scenarios.
-
-Shared workspace scripts accept `-Mod GetondabarMod`: build, deploy to Test_Mods, package, and release. `release.ps1 -Mod GetondabarMod -DryRun -SkipNexus` verifies archives without publishing; `publish.ps1 -Mod GetondabarMod -SkipNexus` creates the Thunderstore package on first upload and adds a version on subsequent uploads. Released versions are immutable. No Nexus mod identity is configured.

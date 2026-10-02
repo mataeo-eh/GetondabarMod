@@ -1,0 +1,14 @@
+{
+  "thunderstore": {
+    "namespace": "Therunner",
+    "packageName": "Getondabar",
+    "community": "valheim"
+  },
+  "nexus": {
+    "enabled": false,
+    "gameDomain": "valheim",
+    "pageModId": null,
+    "modId": null,
+    "fileId": null
+  }
+}

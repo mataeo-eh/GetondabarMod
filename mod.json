@@ -1,6 +1,6 @@
 {
-  "status": "planned",
-  "displayName": "Getondabar mod",
+  "status": "ready",
+  "displayName": "Getondabar",
   "project": "src/GetondabarMod/GetondabarMod.csproj",
   "dll": "src/GetondabarMod/bin/Release/net472/GetondabarMod.dll",
   "pluginType": "GetondabarMod.Plugin",

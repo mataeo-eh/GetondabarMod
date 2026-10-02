@@ -1,0 +1,7 @@
+{
+  "name": "Getondabar",
+  "version_number": "0.1.1",
+  "website_url": "https://github.com/mataeo-eh/GetondabarMod",
+  "description": "ThreadMenace's petting joke: Getondabar thinks you are an ugo. Customize exact-name pet responses with a creature-selecting in-game editor.",
+  "dependencies": ["denikson-BepInExPack_Valheim-5.4.2350"]
+}
