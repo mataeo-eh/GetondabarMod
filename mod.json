@@ -1,0 +1,10 @@
+{
+  "status": "planned",
+  "displayName": "Getondabar mod",
+  "project": "src/GetondabarMod/GetondabarMod.csproj",
+  "dll": "src/GetondabarMod/bin/Release/net472/GetondabarMod.dll",
+  "pluginType": "GetondabarMod.Plugin",
+  "profileDir": "%APPDATA%/Thunderstore Mod Manager/DataFolder/Valheim/profiles/Test_Mods",
+  "assets": [],
+  "packaging": { "thunderstore": "packaging/thunderstore", "nexus": "packaging/nexusmods" }
+}

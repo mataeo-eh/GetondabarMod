@@ -1,0 +1,46 @@
+# Build outputs can embed workstation paths; only source and metadata are public.
+[Bb]in/
+[Oo]bj/
+build/
+dist/
+artifacts/
+packages/
+*.dll
+*.exe
+*.pdb
+*.mdb
+*.zip
+*.nupkg
+*.binlog
+*.log
+*.tmp
+# Credentials and machine-local configuration
+.env
+.env.*
+*.token
+*.key
+*.pem
+*.pfx
+*.secrets
+*credentials*
+*secret*
+Environment.props
+DoPrebuild.props
+*.local.json
+*.local.props
+.release-tools/
+# Editor/agent state and virtual environments
+.vs/
+.vscode/
+.idea/
+.claude/
+.codex/
+.venv/
+venv/
+node_modules/
+__pycache__/
+*.user
+*.suo
+Thumbs.db
+Desktop.ini
+.DS_Store
